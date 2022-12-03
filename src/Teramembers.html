@@ -1,0 +1,634 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../dist/output.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="Code.js" defer></script>
+</head>
+
+<body>
+    <div class="card w-screen h-screen flex justify-center items-center">
+        <div class="card-content w-full relative h-full flex justify-center items-center">
+            <div id="side-bar"
+                class=" absolute z-40 w-4/5 bottom-0 top-0 hidden left-0 bg-white shadow-[12rem_0rem_rgba(0,0,0,0.7)] lg:shadow-none lg:static  lg:z-0 lg:w-[20%] overflow-scroll lg:h-full border-r">
+                <div class="tera border-b ">
+                    <div class="text-2xl text-end text-[#263685] lg:hidden mr-2 cursor-pointer "><i
+                            class="fa-solid fa-close" onclick="SideClose()"></i></div>
+                    <div class="mx-auto flex justify-center mb-6 md:my-6"><a href=""><img src="logo-tera.png"
+                                class=" w-40  h-10  "></a></div>
+                    <p class=" cursor-pointer border py-1 bg-[#263685] mb-4 pl-4 mr-4 rounded-r-[3em] "> <a
+                            href="index.html"><i class=" py-2 text-xl mr-2 fa-solid fa-house-chimney text-white"></i>
+                            <span class="text-xl text-white font-bold">Dashboard</span> </a>
+                    </p>
+                </div>
+                <div class="tera-memb border-b pl-4 mt-1 ">
+                    <h2 class="font-bold ">Téralvers Members</h2>
+                    <ul>
+                        <li class="text-[.8rem] my-4 hover:text-[#263685]"><a href="Teramembers.html">Voir les
+                                membres</a> </li>
+                    </ul>
+                </div>
+                <div class="portfolio ml-4 mt-1 border-b ">
+                    <h2 class="font-bold">Portfolios Components</h2>
+                    <ul>
+                        <li class="text-[.8rem] my-4 hover:text-[#263685]"><a href="">Informations personnelles</a>
+                        </li>
+                        <li class="text-[.8rem] mb-4 hover:text-[#263685]"><a href="">Mes compétences</a> </li>
+                        <li class="text-[.8rem] mb-4 hover:text-[#263685]"><a href="">Qui suis-je ?</a> </li>
+                        <li class="text-[.8rem] mb-4 hover:text-[#263685]"><a href="">Experiences</a> </li>
+                        <li class="text-[.8rem] mb-4 hover:text-[#263685]"><a href="">Educations</a> </li>
+                        <li class="text-[.8rem] mb-4 hover:text-[#263685]"><a href="">Technologies et Languages</a>
+                        </li>
+                        <li class="text-[.8rem] mb-4 hover:text-[#263685]"><a href="">Mes projets</a> </li>
+                        <li class="text-[.8rem] mb-4 hover:text-[#263685]"><a href="">Mes réseaux sociaux</a> </li>
+                    </ul>
+                </div>
+                <div class="msg mt-1 ml-4 border-b ">
+                    <h2 class="font-bold">Messages</h2>
+                    <ul>
+                        <li class="text-[.8rem] my-4 hover:text-[#263685]"><a href="">Messages reçus</a></li>
+                        <li class="text-[.8rem] my-4 hover:text-[#263685]"><a href="">Messages envoyés</a></li>
+                    </ul>
+                </div>
+                <div class="settings mt-1 ml-4 border-b">
+                    <h2 class="font-bold">Paramètres</h2>
+                    <ul>
+                        <li class="text-[.8rem] my-4 hover:text-[#263685]"><a href="">Changer le mot de passe</a></li>
+                        <li class="text-[.8rem] my-4 hover:text-[#263685]"><a href="">Changer d'autres informations</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div id="card-right" class=" bg-gray-100 overflow-scroll w-full mx-auto h-full">
+
+                <!-- Div pour gerer la nav bar -->
+                <div class="nav-bar bg-white md:w-full h-[5.5rem] border-b">
+                    <div class="nav-bar-content flex justify-between items-center w-full h-full  ">
+                        <div class="content-left flex items-center h-full">
+                            <span class="flex mx-2 md:mx-6 text-[#263685] text-2xl md:text-3xl"><i id="icon-bars"
+                                    class="fa-solid fa-bars cursor-pointer" onclick="SideToogle()"></i></span>
+                            <div id="Tera" class=" mr-3 md:mr-6 flex justify-center items-center"><a href=""><img
+                                        src="logo-tera.png" class=" w-32 mb-1 h-8 md:w-40 md:h-10  "></a></div>
+                            <span class="flex text-[#263685] relative items-center 
+                                justify-center text-xl md:text-2xl"><i class=" cursor-pointer fa-regular fa-bell"></i>
+                                <span
+                                    class="absolute top-[-.3rem] right-0 font-bold w-[.8rem] h-[.8rem] text-[.55rem] rounded-full flex justify-center text-white bg-[#263685] items-center m-auto">3
+                                </span>
+                            </span>
+                        </div>
+                        <div class="content-right mr-2 md:mr-8 flex items-center h-full  ">
+                            <div class=" picture w-[2.5rem] h-[2.5rem] md:w-[3rem] md:h-[3rem] rounded-full "><img
+                                    src="man.jpg"
+                                    class="w-[2.5rem] h-[2.5rem] border-[.2rem] border-black rounded-full" alt="">
+                            </div>
+                            <p class=" hidden md:block ml-4 text-[1.2rem] font-bold"> <span
+                                    class="opacity-30">Salut</span>, <span class="font-bold">John Doe</span>
+                            </p>
+                            <button
+                                class=" hidden md:block border rounded-[3em] ml-4 py-2 px-6 text-white font-bold bg-[#28AD81] ">Logout
+                            </button>
+                            <span class=" mb-2 text-xl ml-2 font-bold md:hidden" onclick="ShowAfterNav()">...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- div pour gerer la navbar -->
+
+                <!-- div pour gerer l'apres nav-bar -->
+                <div id="after-nav"
+                    class="w-full h-[4.5rem] hidden px-3 flex justify-between items-center bg-white mt-2 md:hidden ">
+                    <p class="text-[1rem] font-bold"> <span class="opacity-30">Salut</span>, <span
+                            class="font-bold">John Doe</span>
+                    </p>
+                    <button class="border rounded-[3em] py-2 px-4 text-white font-bold bg-[#28AD81] ">Logout
+                    </button>
+                </div>
+                <!-- div pour gerer l'apres nav-bar -->
+
+                <!-- div pour gerer la barre de recherche -->
+                <div class="w-4/5 mx-auto  lg:w-3/4 md:flex md:justify-end mt-2">
+                    <form class="search-bar flex w-full border-[4px] rounded-[3em]  md:w-1/2 ">
+                        <input type="text" class=" rounded-l-[3em] w-full py-2 pl-4" placeholder="Rechercher un membre" name="" id="">
+                        <button type="submit" class="px-4 flex justify-center rounded-r-[3em] items-center bg-[#28AD81] text-white"><i class="fa-sharp  fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- div pour gerer la barre de recherche -->
+
+                <!-- Div pour gerer les informations personnelles -->
+                <div id="info-card" class=" w-4/5 mx-auto lg:w-3/4 flex py-4 my-8 bg-white ">
+                    <div class="info-content h-full w-full md:flex md:justify-around md:items-center  ">
+                        <div class="info-content-left flex justify-center items-center md:h-full">
+                            <div class="">
+                                <p class=" font-bold opacity-60"><i class="fa-solid text-xl mb-6  fa-envelope"></i>
+                                    <span class="text-[.8rem] ml-4">johndoe@gmail.com</span>
+                                </p>
+                                <p class="font-bold opacity-60"><i class="fa-solid text-xl fa-phone-flip"></i>
+                                    <span class="  text-[.8rem] ml-3">+229 99803579</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="info-content-left flex md:w-[25%] justify-center items-center">
+                            <div
+                                class="  border-t-[2px] md:border-l-[2px] md:border-t-[0px] md: my-8 py-4 w-full flex flex-col">
+                                <p class="text-[#28AD81] font-bold mx-auto ">John Doe</p>
+                                <p class="text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Conseiller technique de Téralvers</p>
+                                <p class="text-[#28AD81] mx-auto font-bold mt-2 ">Biographie</p>
+                                <p class=" text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center items-center h-full">
+                            <div class="flex flex-col justify-center items-center">
+                                <div class=" picture w-[6rem] h-[6rem] rounded-full "><img src="man.jpg"
+                                        class="w-[6rem] h-[6rem] border-[.4rem] border-neutral-300 rounded-full" alt="">
+                                </div>
+                                <button
+                                    class=" border mt-2 flex justify-center items-center rounded-[3em] ml-4 py-2 px-6 text-white font-bold bg-[#28AD81] ">Portfolios
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Div pour gerer les informations personnelles -->
+
+                <!-- Div pour gerer les informations personnelles -->
+                <div id="info-card" class=" w-4/5 mx-auto lg:w-3/4 flex py-4 my-8 bg-white ">
+                    <div class="info-content h-full w-full md:flex md:justify-around md:items-center  ">
+                        <div class="info-content-left flex justify-center items-center md:h-full">
+                            <div class="">
+                                <p class=" font-bold opacity-60"><i class="fa-solid text-xl mb-6  fa-envelope"></i>
+                                    <span class="text-[.8rem] ml-4">johndoe@gmail.com</span>
+                                </p>
+                                <p class="font-bold opacity-60"><i class="fa-solid text-xl fa-phone-flip"></i>
+                                    <span class="  text-[.8rem] ml-3">+229 99803579</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="info-content-left flex md:w-[25%] justify-center items-center">
+                            <div
+                                class="  border-t-[2px] md:border-l-[2px] md:border-t-[0px] my-8 py-4 w-full flex flex-col">
+                                <p class="text-[#28AD81] font-bold mx-auto ">John Doe</p>
+                                <p class="text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Conseiller technique de Téralvers</p>
+                                <p class="text-[#28AD81] mx-auto font-bold mt-2 ">Biographie</p>
+                                <p class=" text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center items-center h-full">
+                            <div class="flex flex-col justify-center items-center">
+                                <div class=" picture w-[6rem] h-[6rem] rounded-full "><img src="man.jpg"
+                                        class="w-[6rem] h-[6rem] border-[.4rem] border-neutral-300 rounded-full" alt="">
+                                </div>
+                                <button
+                                    class=" border mt-2 flex justify-center items-center rounded-[3em] ml-4 py-2 px-6 text-white font-bold bg-[#28AD81] ">Portfolios
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Div pour gerer les informations personnelles -->
+
+                <!-- Div pour gerer les informations personnelles -->
+                <div id="info-card" class=" w-4/5 mx-auto lg:w-3/4 flex py-4 my-8 bg-white ">
+                    <div class="info-content h-full w-full md:flex md:justify-around md:items-center  ">
+                        <div class="info-content-left flex justify-center items-center md:h-full">
+                            <div class="">
+                                <p class=" font-bold opacity-60"><i class="fa-solid text-xl mb-6  fa-envelope"></i>
+                                    <span class="text-[.8rem] ml-4">johndoe@gmail.com</span>
+                                </p>
+                                <p class="font-bold opacity-60"><i class="fa-solid text-xl fa-phone-flip"></i>
+                                    <span class="  text-[.8rem] ml-3">+229 99803579</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="info-content-left flex md:w-[25%] justify-center items-center">
+                            <div
+                                class="  border-t-[2px] md:border-l-[2px] md:border-t-[0px] md: my-8 py-4 w-full flex flex-col">
+                                <p class="text-[#28AD81] font-bold mx-auto ">John Doe</p>
+                                <p class="text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Conseiller technique de Téralvers</p>
+                                <p class="text-[#28AD81] mx-auto font-bold mt-2 ">Biographie</p>
+                                <p class=" text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center items-center h-full">
+                            <div class="flex flex-col justify-center items-center">
+                                <div class=" picture w-[6rem] h-[6rem] rounded-full "><img src="man.jpg"
+                                        class="w-[6rem] h-[6rem] border-[.4rem] border-neutral-300 rounded-full" alt="">
+                                </div>
+                                <button
+                                    class=" border mt-2 flex justify-center items-center rounded-[3em] ml-4 py-2 px-6 text-white font-bold bg-[#28AD81] ">Portfolios
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Div pour gerer les informations personnelles -->
+
+                <!-- Div pour gerer les informations personnelles -->
+                <div id="info-card" class=" w-4/5 mx-auto lg:w-3/4 flex py-4 my-8 bg-white ">
+                    <div class="info-content h-full w-full md:flex md:justify-around md:items-center  ">
+                        <div class="info-content-left flex justify-center items-center md:h-full">
+                            <div class="">
+                                <p class=" font-bold opacity-60"><i class="fa-solid text-xl mb-6  fa-envelope"></i>
+                                    <span class="text-[.8rem] ml-4">johndoe@gmail.com</span>
+                                </p>
+                                <p class="font-bold opacity-60"><i class="fa-solid text-xl fa-phone-flip"></i>
+                                    <span class="  text-[.8rem] ml-3">+229 99803579</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="info-content-left flex md:w-[25%] justify-center items-center">
+                            <div
+                                class="  border-t-[2px] md:border-l-[2px] md:border-t-[0px] md: my-8 py-4 w-full flex flex-col">
+                                <p class="text-[#28AD81] font-bold mx-auto ">John Doe</p>
+                                <p class="text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Conseiller technique de Téralvers</p>
+                                <p class="text-[#28AD81] mx-auto font-bold mt-2 ">Biographie</p>
+                                <p class=" text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center items-center h-full">
+                            <div class="flex flex-col justify-center items-center">
+                                <div class=" picture w-[6rem] h-[6rem] rounded-full "><img src="man.jpg"
+                                        class="w-[6rem] h-[6rem] border-[.4rem] border-neutral-300 rounded-full" alt="">
+                                </div>
+                                <button
+                                    class=" border mt-2 flex justify-center items-center rounded-[3em] ml-4 py-2 px-6 text-white font-bold bg-[#28AD81] ">Portfolios
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Div pour gerer les informations personnelles -->
+
+                <!-- Div pour gerer les informations personnelles -->
+                <div id="info-card" class=" w-4/5 mx-auto lg:w-3/4 flex py-4 my-8 bg-white ">
+                    <div class="info-content h-full w-full md:flex md:justify-around md:items-center  ">
+                        <div class="info-content-left flex justify-center items-center md:h-full">
+                            <div class="">
+                                <p class=" font-bold opacity-60"><i class="fa-solid text-xl mb-6  fa-envelope"></i>
+                                    <span class="text-[.8rem] ml-4">johndoe@gmail.com</span>
+                                </p>
+                                <p class="font-bold opacity-60"><i class="fa-solid text-xl fa-phone-flip"></i>
+                                    <span class="  text-[.8rem] ml-3">+229 99803579</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="info-content-left flex md:w-[25%] justify-center items-center">
+                            <div
+                                class="  border-t-[2px] md:border-l-[2px] md:border-t-[0px] md: my-8 py-4 w-full flex flex-col">
+                                <p class="text-[#28AD81] font-bold mx-auto ">John Doe</p>
+                                <p class="text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Conseiller technique de Téralvers</p>
+                                <p class="text-[#28AD81] mx-auto font-bold mt-2 ">Biographie</p>
+                                <p class=" text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center items-center h-full">
+                            <div class="flex flex-col justify-center items-center">
+                                <div class=" picture w-[6rem] h-[6rem] rounded-full "><img src="man.jpg"
+                                        class="w-[6rem] h-[6rem] border-[.4rem] border-neutral-300 rounded-full" alt="">
+                                </div>
+                                <button
+                                    class=" border mt-2 flex justify-center items-center rounded-[3em] ml-4 py-2 px-6 text-white font-bold bg-[#28AD81] ">Portfolios
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Div pour gerer les informations personnelles -->
+
+                <!-- Div pour gerer les informations personnelles -->
+                <div id="info-card" class=" w-4/5 mx-auto lg:w-3/4 flex py-4 my-8 bg-white ">
+                    <div class="info-content h-full w-full md:flex md:justify-around md:items-center  ">
+                        <div class="info-content-left flex justify-center items-center md:h-full">
+                            <div class="">
+                                <p class=" font-bold opacity-60"><i class="fa-solid text-xl mb-6  fa-envelope"></i>
+                                    <span class="text-[.8rem] ml-4">johndoe@gmail.com</span>
+                                </p>
+                                <p class="font-bold opacity-60"><i class="fa-solid text-xl fa-phone-flip"></i>
+                                    <span class="  text-[.8rem] ml-3">+229 99803579</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="info-content-left flex md:w-[25%] justify-center items-center">
+                            <div
+                                class="  border-t-[2px] md:border-l-[2px] md:border-t-[0px] md: my-8 py-4 w-full flex flex-col">
+                                <p class="text-[#28AD81] font-bold mx-auto ">John Doe</p>
+                                <p class="text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Conseiller technique de Téralvers</p>
+                                <p class="text-[#28AD81] mx-auto font-bold mt-2 ">Biographie</p>
+                                <p class=" text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center items-center h-full">
+                            <div class="flex flex-col justify-center items-center">
+                                <div class=" picture w-[6rem] h-[6rem] rounded-full "><img src="man.jpg"
+                                        class="w-[6rem] h-[6rem] border-[.4rem] border-neutral-300 rounded-full" alt="">
+                                </div>
+                                <button
+                                    class=" border mt-2 flex justify-center items-center rounded-[3em] ml-4 py-2 px-6 text-white font-bold bg-[#28AD81] ">Portfolios
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Div pour gerer les informations personnelles -->
+
+                <!-- Div pour gerer les informations personnelles -->
+                <div id="info-card" class=" w-4/5 mx-auto lg:w-3/4 flex py-4 my-8 bg-white ">
+                    <div class="info-content h-full w-full md:flex md:justify-around md:items-center  ">
+                        <div class="info-content-left flex justify-center items-center md:h-full">
+                            <div class="">
+                                <p class=" font-bold opacity-60"><i class="fa-solid text-xl mb-6  fa-envelope"></i>
+                                    <span class="text-[.8rem] ml-4">johndoe@gmail.com</span>
+                                </p>
+                                <p class="font-bold opacity-60"><i class="fa-solid text-xl fa-phone-flip"></i>
+                                    <span class="  text-[.8rem] ml-3">+229 99803579</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="info-content-left flex md:w-[25%] justify-center items-center">
+                            <div
+                                class="  border-t-[2px] md:border-l-[2px] md:border-t-[0px] md: my-8 py-4 w-full flex flex-col">
+                                <p class="text-[#28AD81] font-bold mx-auto ">John Doe</p>
+                                <p class="text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Conseiller technique de Téralvers</p>
+                                <p class="text-[#28AD81] mx-auto font-bold mt-2 ">Biographie</p>
+                                <p class=" text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center items-center h-full">
+                            <div class="flex flex-col justify-center items-center">
+                                <div class=" picture w-[6rem] h-[6rem] rounded-full "><img src="man.jpg"
+                                        class="w-[6rem] h-[6rem] border-[.4rem] border-neutral-300 rounded-full" alt="">
+                                </div>
+                                <button
+                                    class=" border mt-2 flex justify-center items-center rounded-[3em] ml-4 py-2 px-6 text-white font-bold bg-[#28AD81] ">Portfolios
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Div pour gerer les informations personnelles -->
+
+                <!-- Div pour gerer les informations personnelles -->
+                <div id="info-card" class=" w-4/5 mx-auto lg:w-3/4 flex py-4 my-8 bg-white ">
+                    <div class="info-content h-full w-full md:flex md:justify-around md:items-center  ">
+                        <div class="info-content-left flex justify-center items-center md:h-full">
+                            <div class="">
+                                <p class=" font-bold opacity-60"><i class="fa-solid text-xl mb-6  fa-envelope"></i>
+                                    <span class="text-[.8rem] ml-4">johndoe@gmail.com</span>
+                                </p>
+                                <p class="font-bold opacity-60"><i class="fa-solid text-xl fa-phone-flip"></i>
+                                    <span class="  text-[.8rem] ml-3">+229 99803579</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="info-content-left flex md:w-[25%] justify-center items-center">
+                            <div
+                                class="  border-t-[2px] md:border-l-[2px] md:border-t-[0px] md: my-8 py-4 w-full flex flex-col">
+                                <p class="text-[#28AD81] font-bold mx-auto ">John Doe</p>
+                                <p class="text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Conseiller technique de Téralvers</p>
+                                <p class="text-[#28AD81] mx-auto font-bold mt-2 ">Biographie</p>
+                                <p class=" text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center items-center h-full">
+                            <div class="flex flex-col justify-center items-center">
+                                <div class=" picture w-[6rem] h-[6rem] rounded-full "><img src="man.jpg"
+                                        class="w-[6rem] h-[6rem] border-[.4rem] border-neutral-300 rounded-full" alt="">
+                                </div>
+                                <button
+                                    class=" border mt-2 flex justify-center items-center rounded-[3em] ml-4 py-2 px-6 text-white font-bold bg-[#28AD81] ">Portfolios
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Div pour gerer les informations personnelles -->
+
+                <!-- Div pour gerer les informations personnelles -->
+                <div id="info-card" class=" w-4/5 mx-auto lg:w-3/4 flex py-4 my-8 bg-white ">
+                    <div class="info-content h-full w-full md:flex md:justify-around md:items-center  ">
+                        <div class="info-content-left flex justify-center items-center md:h-full">
+                            <div class="">
+                                <p class=" font-bold opacity-60"><i class="fa-solid text-xl mb-6  fa-envelope"></i>
+                                    <span class="text-[.8rem] ml-4">johndoe@gmail.com</span>
+                                </p>
+                                <p class="font-bold opacity-60"><i class="fa-solid text-xl fa-phone-flip"></i>
+                                    <span class="  text-[.8rem] ml-3">+229 99803579</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="info-content-left flex md:w-[25%] justify-center items-center">
+                            <div
+                                class="  border-t-[2px] md:border-l-[2px] md:border-t-[0px] md: my-8 py-4 w-full flex flex-col">
+                                <p class="text-[#28AD81] font-bold mx-auto ">John Doe</p>
+                                <p class="text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Conseiller technique de Téralvers</p>
+                                <p class="text-[#28AD81] mx-auto font-bold mt-2 ">Biographie</p>
+                                <p class=" text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center items-center h-full">
+                            <div class="flex flex-col justify-center items-center">
+                                <div class=" picture w-[6rem] h-[6rem] rounded-full "><img src="man.jpg"
+                                        class="w-[6rem] h-[6rem] border-[.4rem] border-neutral-300 rounded-full" alt="">
+                                </div>
+                                <button
+                                    class=" border mt-2 flex justify-center items-center rounded-[3em] ml-4 py-2 px-6 text-white font-bold bg-[#28AD81] ">Portfolios
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Div pour gerer les informations personnelles -->
+
+                <!-- Div pour gerer les informations personnelles -->
+                <div id="info-card" class=" w-4/5 mx-auto lg:w-3/4 flex py-4 my-8 bg-white ">
+                    <div class="info-content h-full w-full md:flex md:justify-around md:items-center  ">
+                        <div class="info-content-left flex justify-center items-center md:h-full">
+                            <div class="">
+                                <p class=" font-bold opacity-60"><i class="fa-solid text-xl mb-6  fa-envelope"></i>
+                                    <span class="text-[.8rem] ml-4">johndoe@gmail.com</span>
+                                </p>
+                                <p class="font-bold opacity-60"><i class="fa-solid text-xl fa-phone-flip"></i>
+                                    <span class="  text-[.8rem] ml-3">+229 99803579</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="info-content-left flex md:w-[25%] justify-center items-center">
+                            <div
+                                class="  border-t-[2px] md:border-l-[2px] md:border-t-[0px] md: my-8 py-4 w-full flex flex-col">
+                                <p class="text-[#28AD81] font-bold mx-auto ">John Doe</p>
+                                <p class="text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Conseiller technique de Téralvers</p>
+                                <p class="text-[#28AD81] mx-auto font-bold mt-2 ">Biographie</p>
+                                <p class=" text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center items-center h-full">
+                            <div class="flex flex-col justify-center items-center">
+                                <div class=" picture w-[6rem] h-[6rem] rounded-full "><img src="man.jpg"
+                                        class="w-[6rem] h-[6rem] border-[.4rem] border-neutral-300 rounded-full" alt="">
+                                </div>
+                                <button
+                                    class=" border mt-2 flex justify-center items-center rounded-[3em] ml-4 py-2 px-6 text-white font-bold bg-[#28AD81] ">Portfolios
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Div pour gerer les informations personnelles -->
+
+                <!-- Div pour gerer les informations personnelles -->
+                <div id="info-card" class=" w-4/5 mx-auto lg:w-3/4 flex py-4 my-8 bg-white ">
+                    <div class="info-content h-full w-full md:flex md:justify-around md:items-center  ">
+                        <div class="info-content-left flex justify-center items-center md:h-full">
+                            <div class="">
+                                <p class=" font-bold opacity-60"><i class="fa-solid text-xl mb-6  fa-envelope"></i>
+                                    <span class="text-[.8rem] ml-4">johndoe@gmail.com</span>
+                                </p>
+                                <p class="font-bold opacity-60"><i class="fa-solid text-xl fa-phone-flip"></i>
+                                    <span class="  text-[.8rem] ml-3">+229 99803579</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="info-content-left flex md:w-[25%] justify-center items-center">
+                            <div
+                                class="  border-t-[2px] md:border-l-[2px] md:border-t-[0px] md: my-8 py-4 w-full flex flex-col">
+                                <p class="text-[#28AD81] font-bold mx-auto ">John Doe</p>
+                                <p class="text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Conseiller technique de Téralvers</p>
+                                <p class="text-[#28AD81] mx-auto font-bold mt-2 ">Biographie</p>
+                                <p class=" text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center items-center h-full">
+                            <div class="flex flex-col justify-center items-center">
+                                <div class=" picture w-[6rem] h-[6rem] rounded-full "><img src="man.jpg"
+                                        class="w-[6rem] h-[6rem] border-[.4rem] border-neutral-300 rounded-full" alt="">
+                                </div>
+                                <button
+                                    class=" border mt-2 flex justify-center items-center rounded-[3em] ml-4 py-2 px-6 text-white font-bold bg-[#28AD81] ">Portfolios
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Div pour gerer les informations personnelles -->
+
+                <!-- Div pour gerer les informations personnelles -->
+                <div id="info-card" class=" w-4/5 mx-auto lg:w-3/4 flex py-4 my-8 bg-white ">
+                    <div class="info-content h-full w-full md:flex md:justify-around md:items-center  ">
+                        <div class="info-content-left flex justify-center items-center md:h-full">
+                            <div class="">
+                                <p class=" font-bold opacity-60"><i class="fa-solid text-xl mb-6  fa-envelope"></i>
+                                    <span class="text-[.8rem] ml-4">johndoe@gmail.com</span>
+                                </p>
+                                <p class="font-bold opacity-60"><i class="fa-solid text-xl fa-phone-flip"></i>
+                                    <span class="  text-[.8rem] ml-3">+229 99803579</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="info-content-left flex md:w-[25%] justify-center items-center">
+                            <div
+                                class="  border-t-[2px] md:border-l-[2px] md:border-t-[0px] md: my-8 py-4 w-full flex flex-col">
+                                <p class="text-[#28AD81] font-bold mx-auto ">John Doe</p>
+                                <p class="text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Conseiller technique de Téralvers</p>
+                                <p class="text-[#28AD81] mx-auto font-bold mt-2 ">Biographie</p>
+                                <p class=" text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center items-center h-full">
+                            <div class="flex flex-col justify-center items-center">
+                                <div class=" picture w-[6rem] h-[6rem] rounded-full "><img src="man.jpg"
+                                        class="w-[6rem] h-[6rem] border-[.4rem] border-neutral-300 rounded-full" alt="">
+                                </div>
+                                <button
+                                    class=" border mt-2 flex justify-center items-center rounded-[3em] ml-4 py-2 px-6 text-white font-bold bg-[#28AD81] ">Portfolios
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Div pour gerer les informations personnelles -->
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
