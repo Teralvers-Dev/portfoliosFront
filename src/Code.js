@@ -4,7 +4,9 @@ var logo=document.getElementById("Tera")
 var cright=document.getElementById("card-right")
 var divinfo=document.getElementById("info-card")
 var aftnav=document.getElementById("after-nav")
-
+var t=document.querySelector(".card-edit-tech")
+var l=document.querySelector(".card-edit-lang")
+var radios = document.querySelectorAll("input[type='radio']")
 function is_null(params) {
     if (params == null) {
         return true
@@ -24,4 +26,14 @@ function SideToogle() {
 function ShowAfterNav(){
 aftnav.classList.toggle("hidden");
 }
+function Permute(){
+if (radios[0].checked) {
+    t.classList.toggle('hidden')
+    l.classList.toggle('hidden')
+}
+else if (radios[1].checked) {
+    t.classList.toggle('hidden')
+    l.classList.toggle('hidden')
+}
 
+}

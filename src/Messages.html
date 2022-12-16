@@ -117,87 +117,103 @@
 
                 <!-- Div pour gerer le formulaire du profil -->
                 <div class="w-full mt-6 mb-12 flex justify-center items-center">
-                    <div class="card-edit w-5/6 lg:3/4 bg-white pb-4  ">
-                        <div class="border-b mt-4 w-1/2 flex mx-auto justify-center items-center">
-                            <p class="uppercase text-[#28AD81] mt-4 text-center font-bold"><a href=""
-                                    name="Info">ajouter une experience professionnelle</a>
+                    <div class="card-edit w-5/6  bg-white pb-4 ">
+                        <div class="border-b my-4 w-1/2 flex mx-auto justify-center items-center">
+                            <p class="uppercase text-[#28AD81] text-center font-bold"><a href="" name="Info">
+                                    liste des messages recues</a>
                             </p>
                         </div>
-                        <!-- Formulaire de remplissage des comptetences -->
-                        <form class="edit-form w-5/6 lg:w-[60%] mt-6 md:px-8 mx-auto ">
-                            <div class="md:flex md:justify-between w-full mb-8 ">
-                                <p class=" text-[.8rem] mb-1 font-bold  ">Nom de l'experience</p>
-                                <input type="text"
-                                    class="h-8 w-full md:w-[51.5%] mr-2 rounded-[.4rem] border border-black">
-                            </div>
-                            <div class="md:flex md:justify-between w-full mb-8 ">
-                                <p class=" text-[.8rem] mb-1 font-bold  ">Date de début</p>
-                                <input type="date"
-                                    class="h-8 w-full md:w-[51.5%]  mr-2 rounded-[.4rem] border border-black">
-                            </div>
-                            <div class="md:flex md:justify-between w-full mb-8 ">
-                                <p class=" text-[.8rem] mb-1 font-bold  ">Date de fin</p>
-                                <input type="date"
-                                    class="h-8 w-full md:w-[51.5%]  mr-2 rounded-[.4rem] border border-black">
-                            </div>
-                            <div class="md:flex md:justify-between w-full mb-8">
-                                <p class=" text-[.8rem] mb-1 font-bold">Descrivez votre expérience</p>
-                                <div class="flex justify-between h-20 w-full md:w-[53%]">
-                                    <textarea name="" id="" class="w-full mr-2 border border-black rounded-[.4rem]"></textarea>
+
+                        <div class="w-full lg:flex lg:mx-auto ">
+                            <div class="px-4 overflow-scroll ">
+                                <div class=" flex flex-col justify-center items-center mx-auto mb-2 lg:flex lg:flex-row lg:justify-between">
+                                    <p class="font-bold mb-1 lg:mb-0"> 3 messages recues</p>
+                                    <div class="">
+                                        <form class="search-bar lg:flex lg:w-full ">
+                                            <input type="text"
+                                                class=" rounded-[.7em] border border-black  lg:w-full mr-2 pl-4"
+                                                placeholder="Expediteur | Email" name="" id="">
+                                            <button type="submit"
+                                                class="px-4 flex mx-auto justify-center rounded-[3em] mt-1 lg:mt-0 items-center bg-[#28AD81] font-bold text-white">Rechercher
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class=" h-[30%] mb-4 mx-auto px-2 w-2/3 py-4 bg-gray-200 lg:hidden ">
+                                    <p class="uppercase font-bold text-xs  ">filtrer les messages</p>
+                                    <p class="text-xs mb-2 text-blue-400 mt-4"><a href="">Aujourd'hui</a></p>
+                                    <p class="text-xs mb-4 text-blue-400"><a href="">Hier</a></p>
+                                    <p class="text-xs text-center font-bold">Date quelconque</p>
+                                    <form action="">
+                                        <input type="date"
+                                            class=" h-5 rounded-[.4em] border mt-2 mb-3 flex justify-center items-center mx-auto w-4/5 border-black pl-4"
+                                            placeholder="Expediteur | Email" name="" id="">
+                                        <button type="submit"
+                                            class="px-6 flex  justify-center text-[.8rem] rounded-[3em] items-center bg-[#28AD81] font-bold mx-auto text-white">Filtrer
+                                        </button>
+                                    </form>
+                                </div>
+                                <div class=" overflow-scroll">
+                                    <table class="w-full border-collapse">
+                                        <tr>
+                                            <th class="uppercase text-xs">expediteur</th>
+                                            <th class="uppercase text-xs">email de l'expediteur</th>
+                                            <th class="uppercase text-xs">messages</th>
+                                            <th class="uppercase text-xs">date</th>
+                                            <th class="uppercase text-xs">actions</th>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="text-xs">Joseph</td>
+                                            <td class="text-xs">rabelaiskpechekou@gmail.com</td>
+                                            <td class="text-xs">Je suis un excellent createur de maquettes
+                                                d'applications
+                                                web, mobile et desktop</td>
+                                            <td class="text-xs">06/07/2022</td>
+                                            <td><i class="fa-solid  text-base text-red-600 fa-trash-can"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-xs">Joseph</td>
+                                            <td class="text-xs">rabelaiskpechekou@gmail.com</td>
+                                            <td class="text-xs">Je suis un excellent createur de maquettes
+                                                d'applications
+                                                web, mobile et desktop</td>
+                                            <td class="text-xs">06/07/2022</td>
+                                            <td><i class="fa-solid text-base text-red-600 fa-trash-can"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-xs">Joseph</td>
+                                            <td class="text-xs">rabelaiskpechekou@gmail.com</td>
+                                            <td class="text-xs">Je suis un excellent createur de maquettes
+                                                d'applications
+                                                web, mobile et desktop</td>
+                                            <td class="text-xs">06/07/2022</td>
+                                            <td><i class="fa-solid text-base text-red-600 fa-trash-can"></i></td>
+                                        </tr>
+                                    </table>
                                 </div>
                             </div>
-                            <div class=" w-full mx-auto mb-4 md:flex md:flex-row-reverse md:justify-center md:items-center md:w-[50%] ">
-                                <button type="submit"
-                                class="  mb-4 md:mb-0 mx-auto md:mr-4 border flex justify-center items-center rounded-[3em]  py-1 px-6 text-white font-bold bg-[#28AD81]  ">Enregistrer</button>
-                                <button type="reset"
-                                class=" mx-auto md:mr-4 border flex justify-center items-center rounded-[3em]  py-1 px-8 text-white font-bold bg-red-500 ">Annuler</button>
-                            </div>
-                        </form>
-                        <!-- Formulaire de remplissage des comptetences -->
-
-
-                        <div class="border-b mt-4 w-1/2 flex mx-auto justify-center items-center">
-                            <p class="uppercase text-[#28AD81] mt-4 text-center font-bold"><a href="" name="Info">vos
-                                    experiences</a>
-                            </p>
-                        </div>
-                        <div class=" overflow-scroll m-4 lg:w-[70%] lg:mx-auto ">
-                            <table class="w-full border-collapse ">
-                                <tr >
-                                    <th class="uppercase text-xs ">nom de l'experience</th>
-                                    <th class="uppercase text-xs">date de debut</th>
-                                    <th class="uppercase text-xs" >date de fin</th>
-                                    <th class="uppercase text-xs" >description de l'expérience</th>
-                                    <th class="uppercase text-xs" colspan="2">actions</th>
-
-                                </tr>
-                                <tr>
-                                    <td class="text-xs">UX Design</td>
-                                    <td class="text-xs">19/12/2020</td>
-                                    <td class="text-xs">06/07/2022</td>
-                                    <td class="text-xs">Je suis un excellent createur de maquettes d'applications web, mobile et desktop</td>
-                                    <td><i class="fa-solid text-base text-red-600 fa-trash-can"></i></td>
-                                    <td> <i class="fa-solid text-base fa-pen-to-square text-blue-600 mr-2"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="text-xs">UX Design</td>
-                                    <td class="text-xs">19/12/2020</td>
-                                    <td class="text-xs">06/07/2022</td>
-                                    <td class="text-xs">Je suis un excellent createur de maquettes d'applications web, mobile et desktop</td>
-                                    <td><i class="fa-solid text-red-600 text-base fa-trash-can"></i></td>
-                                    <td> <i class="fa-solid fa-pen-to-square text-base text-blue-600 mr-2"></i></td>
-                                </tr>
-                            </table>
-                        </div>
+                                
                             
-
-
+                            <div class=" h-1/2 px-2 py-4 mr-6 bg-gray-200 hidden lg:block ">
+                                <p class="uppercase font-bold text-xs  ">filtrer les messages</p>
+                                <p class="text-xs mb-2 text-blue-400 mt-4"><a href="">Aujourd'hui</a></p>
+                                <p class="text-xs mb-4 text-blue-400"><a href="">Hier</a></p>
+                                <p class="text-xs font-bold">Date quelconque</p>
+                                <form action="">
+                                    <input type="date"
+                                        class=" h-5 rounded-[.4em] border mt-2 mb-3 flex justify-center items-center mx-auto w-4/5 border-black pl-4"
+                                        placeholder="Expediteur | Email" name="" id="">
+                                    <button type="submit"
+                                        class="px-6 flex  justify-center text-[.8rem] rounded-[3em] items-center bg-[#28AD81] font-bold mx-auto text-white">Filtrer
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Div pour gerer le formulaire du profil -->
                     </div>
                 </div>
-                <!-- Div pour gerer le formulaire du profil -->
             </div>
-        </div>
-    </div>
 </body>
 
 </html>
