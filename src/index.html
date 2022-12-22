@@ -15,9 +15,9 @@
     <div class="card w-screen h-screen flex justify-center items-center">
         <div class="card-content w-full relative h-full flex justify-center items-center">
             <!-- div pour gerer la sidebar -->
-            <div id="side-bar" class=" absolute z-40 w-4/5 bottom-0 top-0 hidden left-0 bg-white shadow-[12rem_0rem_rgba(0,0,0,0.7)] lg:shadow-none lg:static lg:z-0 lg:w-[20%] overflow-scroll lg:h-full border-r">
+            <div id="side-bar" class=" absolute z-40 w-4/5 bottom-0 top-0 hidden left-0 bg-white shadow-[12rem_0rem_rgba(0,0,0,0.7)] lg:shadow-none lg:static lg:z-0 lg:w-[20%] overflow-scroll lg:h-full border-b lg:border-r lg:border-b-0">
                 <div class="tera border-b ">
-                    <div class="text-2xl text-end text-[#263685] lg:hidden mr-2 cursor-pointer "><i class="fa-solid fa-close " onclick="SideToogle()"></i></div>
+                    <div class="text-2xl text-end text-[#263685] lg:hidden mr-2 cursor-pointer "><i id="close-icons" class="fa-solid fa-close " onclick=""></i></div>
                     <div class="mx-auto flex justify-center mb-6 md:my-6" ><a href="index.html"><img src="logo-tera.png" class=" w-40  h-10  "></a></div>
                     <p class=" cursor-pointer border py-1 bg-[#263685] mb-4 pl-4 mr-4 rounded-r-[3em] "> <a href="index.html"><i
                             class=" py-2 text-xl mr-2 fa-solid fa-house-chimney text-white"></i> 
@@ -64,7 +64,7 @@
                  <div class="nav-bar bg-white md:w-full h-[5.5rem] border-b">
                     <div class="nav-bar-content flex justify-between items-center w-full h-full  ">
                         <div class="content-left flex items-center h-full">
-                            <span class="flex mx-2 md:mx-6 text-[#263685] text-2xl md:text-3xl"><i id="icon-bars" class="fa-solid fa-bars cursor-pointer" onclick="SideToogle()" ></i></span>
+                            <span class="flex mx-2 md:mx-6 text-[#263685] text-2xl md:text-3xl"><i id="icon-bars" class="fa-solid fa-bars cursor-pointer" onclick="" ></i></span>
                             <div id="Tera" class=" mr-3 md:mr-6 flex justify-center items-center" ><a href="index.html"><img src="logo-tera.png" class=" w-32 mb-1 h-8 md:w-40 md:h-10  "></a></div>
                            <span class="flex text-[#263685] relative items-center 
                                 justify-center text-xl md:text-2xl"><i class=" cursor-pointer fa-regular fa-bell"></i>
@@ -75,7 +75,7 @@
                         </div>
                         <div class="content-right mr-2 md:mr-8 flex items-center h-full  ">
                             <div class=" picture w-[2.5rem] h-[2.5rem] md:w-[3rem] md:h-[3rem] rounded-full "><img src="man.jpg"
-                                    class="w-[2.5rem] h-[2.5rem] border-[.2rem] border-black rounded-full" alt="">
+                                    class="w-[2.5rem] h-[2.5rem] border-[.2rem]  rounded-full" alt="">
                             </div>
                             <p class=" hidden md:block ml-4 text-[1.2rem] font-bold"> <span class="opacity-30">Salut</span>, <span
                                     class="font-bold">John Doe</span>
@@ -83,7 +83,7 @@
                             <button
                                 class=" hidden md:block border rounded-[3em] ml-4 py-2 px-6 text-white font-bold bg-[#28AD81] ">Logout
                             </button>
-                            <span class=" mb-2 text-xl ml-2 font-bold cursor-pointer md:hidden" onclick="ShowAfterNav()">...</span>
+                            <span id="point" class=" mb-2 text-xl ml-2 font-bold cursor-pointer md:hidden" onclick="">...</span>
                         </div>
                     </div>
                 </div>
@@ -95,50 +95,120 @@
                         class="font-bold">John Doe</span>
                 </p>
                 <button
-                    class="border rounded-[3em] py-2 px-4 text-white font-bold bg-[#28AD81] ">Logout
+                    class="border rounded-[3em] py-2 px-8 py-6-white font-bold bg-[#28AD81] ">Logout
                 </button>
                 </div>
                 <!-- div pour gerer l'apres nav-bar -->
 
 
                 <!-- Div pour gerer les informations personnelles -->
-                    <div id="info-card" class=" w-5/6 mx-auto lg:w-3/4 flex py-4 my-8 bg-white ">
-                        <div class="info-content h-full w-full md:flex md:justify-around md:items-center  ">
-                            <div class="info-content-left flex justify-center items-center md:h-full">
-                                <div class="">
-                                    <p class=" font-bold opacity-60"><i class="fa-solid text-xl mb-6  fa-envelope"></i>
-                                        <span class="text-[.8rem] ml-4">johndoe@gmail.com</span>
-                                    </p>
-                                           <p class="font-bold opacity-60"><i class="fa-solid text-xl fa-phone-flip"></i>
-                                        <span class="  text-[.8rem] ml-3">+229 99803579</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="info-content-left flex md:w-[25%] justify-center items-center">
-                               <div class=" border-t-[2px] md:border-l-[2px] md:border-t-[0px] my-8 py-4 w-full flex flex-col">
-                                <p class="text-[#28AD81] font-bold mx-auto ">John Doe</p>
-                                <p class="text-[.8rem] text-center w-1/2 md:pl-3 mx-auto md:w-full font-bold opacity-60 ">Conseiller technique de Téralvers</p>
-                                <p class="text-[#28AD81] mx-auto font-bold mt-2 ">Biographie</p>
-                                <p class=" text-[.8rem] text-center w-1/2 md:pl-3 mx-auto md:w-full font-bold opacity-60 ">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                <div id="info-card" class=" w-4/5 mx-auto lg:w-3/4 flex py-4 my-8 bg-white ">
+                    <div class="info-content h-full w-full md:flex md:justify-around md:items-center  ">
+                        <div class="info-content-left flex justify-center items-center md:h-full">
+                            <div class="">
+                                <p class=" font-bold opacity-60"><i class="fa-solid text-xl mb-6  fa-envelope"></i>
+                                    <span class="text-[.8rem] ml-4">johndoe@gmail.com</span>
+                                </p>
+                                <p class="font-bold opacity-60"><i class="fa-solid text-xl fa-phone-flip"></i>
+                                    <span class="  text-[.8rem] ml-3">+229 99803579</span>
                                 </p>
                             </div>
-                            </div>
-                           
-                            <div class="flex justify-center items-center h-full">
-                                <div class="flex flex-col justify-center items-center">
-                                    <div class=" picture w-[6rem] h-[6rem] rounded-full "><img src="man.jpg"
-                                            class="w-[6rem] h-[6rem] border-[.4rem] border-neutral-300 rounded-full" alt="">
-                                    </div>
-                                    <button
-                                        class=" border mt-2 flex justify-center items-center rounded-[3em] ml-4 py-2 px-6 text-white font-bold bg-[#28AD81] ">Portfolios
-                                    </button>
-                                </div>
-                        
+                        </div>
+                        <div class="info-content-left flex md:w-[25%] justify-center items-center">
+                            <div
+                                class="  border-t-[2px] md:border-l-[2px] md:border-t-[0px] my-8 py-4 px-1 w-full flex flex-col">
+                                <p class="text-[#28AD81] font-bold mx-auto ">John Doe</p>
+                                <p class="text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Conseiller technique de Téralvers</p>
+                                <p class="text-[#28AD81] mx-auto font-bold mt-2 ">Biographie</p>
+                                <p class=" text-[.8rem] text-center w-1/2 mx-auto md:w-full font-bold opacity-60 ">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
                             </div>
                         </div>
-                
+
+                        <div class="flex justify-center items-center h-full">
+                            <div class="flex flex-col justify-center items-center">
+                                <div class=" picture w-[6rem] h-[6rem] rounded-full "><img src="man.jpg"
+                                        class="w-[6rem] h-[6rem] border-[.4rem] border-neutral-300 rounded-full" alt="">
+                                </div>
+                                <button
+                                    class=" border mt-2 flex justify-center items-center rounded-[3em] ml-4 py-2 px-6 text-white font-bold bg-[#28AD81] ">Portfolios
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
-                 <!-- Div pour gerer le formulaire du profil -->
+                 <!-- Div pour gerer les statistiques -->
+                 <div id="stat-card" class=" w-4/5 mx-auto lg:w-3/4 flex py-4 my-8 bg-white ">
+                    <div class="stat-content h-full w-full lg:flex lg:justify-around lg:items-center  ">
+                        <div class="stat-content-number flex justify-center mx-auto items-center md:h-full">
+                            <div class="w-full  ">
+                                <p class="uppercase text-[#28AD81] mt-4 text-center font-bold">statistiques de votre portfolio
+                                </p>
+                            <div class="lg:flex my-2">
+                               <div class="stat-info border-b lg:border-r lg:border-b-0 px-8 py-6   ">
+                                 <p class="font-bold text-center text-xl">500 </p>
+                                 <p class="text-center" >visiteurs</p>
+                               </div>
+                               <div class="stat-info border-b lg:border-r lg:border-b-0 px-8 py-6   ">
+                                <p class="font-bold text-center "> <span class="text-xl"> 250</span> <i class="fa-regular text-base fa-circle-user ml-2"></i></p>
+                                <p class="text-center" >visiteurs utilisateurs</p>
+                              </div>
+                              <div class="stat-info border-b lg:border-r lg:border-b-0 px-8 py-6   ">
+                                <p class="font-bold text-center text-xl">800</p>
+                                <p class="text-center" >messages recues</p>
+                              </div>
+                              <div class="stat-info border-b lg:border-r lg:border-b-0 px-8 py-6   ">
+                                <p class="font-bold text-center text-xl">50</p>
+                                <p class="text-center" >technologies maitrisées</p>
+                              </div>
+                              <div class="stat-info border-b lg:border-r lg:border-b-0 px-8 py-6   ">
+                                <p class="font-bold text-center text-xl">02</p>
+                                <p class="text-center" >langues maitrisées</p>
+                              </div>
+                              <div class="stat-info px-8 py-6   ">
+                                <p class="font-bold text-center text-xl">20</p>
+                                <p class="text-center" >projets réalisés</p>
+                              </div> 
+                            </div>
+                            <div class="w-full">
+                                <p class="uppercase text-[#28AD81] my-4 text-center font-bold">projets par technologies
+                                </p>
+                                <div class="projects w-full ">
+                                    <div class=" w-5/6 lg:w-1/2 py-2 flex justify-around items-center rounded-[.2rem] bg-gray-200 mx-auto my-2">
+                                        <span class="text-[.8rem] font-bold">Vue JS</span>
+                                        <span class="border rounded-[3em] py-1 px-4 text-white text-[.6rem] font-bold bg-[#28AD81] ">16 projets</span>
+                                    </div>
+                                    <div class=" w-5/6 lg:w-1/2 py-2 flex justify-around items-center rounded-[.2rem] bg-gray-200 mx-auto my-2">
+                                        <span class="text-[.8rem] font-bold">Node JS</span>
+                                        <span class="border rounded-[3em] py-1 px-4 text-white text-[.6rem] font-bold bg-[#28AD81] ">16 projets</span>
+                                    </div>
+                                    <div class=" w-5/6 lg:w-1/2 py-2 flex justify-around items-center rounded-[.2rem] bg-gray-200 mx-auto my-2">
+                                        <span class="text-[.8rem] font-bold">React JS</span>
+                                        <span class="border rounded-[3em] py-1 px-4 text-white text-[.6rem] font-bold bg-[#28AD81] ">16 projets</span>
+                                    </div>
+                                    <div class=" w-5/6 lg:w-1/2 py-2 flex justify-around items-center rounded-[.2rem] bg-gray-200 mx-auto my-2">
+                                        <span class="text-[.8rem] font-bold">Laravel</span>
+                                        <span class="border rounded-[3em] py-1 px-4 text-white text-[.6rem] font-bold bg-[#28AD81] ">16 projets</span>
+                                    </div>
+                                    <div class=" w-5/6 lg:w-1/2 py-2 flex justify-around items-center rounded-[.2rem] bg-gray-200 mx-auto my-2">
+                                        <span class="text-[.8rem] font-bold">Django</span>
+                                        <span class="border rounded-[3em] py-1 px-4 text-white text-[.6rem] font-bold bg-[#28AD81] ">16 projets</span>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="projects-stat">
+                            
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Div pour gerer les statistiques -->
             </div>
 
         </div>
