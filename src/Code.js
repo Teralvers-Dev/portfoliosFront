@@ -57,10 +57,9 @@ function check(e) {
     } 
     else {
       // click both outside link and outside menu, hide menu
-      sidebar.classList.add("hidden");
+      (!is_null(sidebar)) ? sidebar.classList.add("hidden") : '';
       (!is_null(logo)) ? logo.classList.toggle("lg:hidden") : '';
       (!is_null(cright)) ? cright.classList.toggle("lg:w-[80%]") : '';
-      (!is_null(cright)) ? cright.classList.toggle("lg:w-full") : '';
       (!is_null(divinfo)) ? divinfo.classList.toggle("lg:w-3/4") : '';
       (!is_null(divinfo)) ? divinfo.classList.toggle("lg:w-full") : '';
     }
@@ -68,9 +67,9 @@ function check(e) {
   if (checkParent(target, p )) {
     aftnav.classList.toggle("hidden");
   } 
-  else{ 
-    aftnav.classList.toggle("hidden");
-   }
+  else{
+    aftnav.classList.add("hidden");
+  }
   if(checkParent(target, closeicons)) {
     (!is_null(sidebar)) ? sidebar.classList.toggle("hidden") : '';
     (!is_null(logo)) ? logo.classList.toggle("lg:hidden") : '';

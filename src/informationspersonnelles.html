@@ -15,9 +15,9 @@
     <div class="card w-screen h-screen flex justify-center items-center">
         <div class="card-content w-full relative h-full flex justify-center items-center">
             <!-- div pour gerer la sidebar -->
-            <div id="side-bar" class=" absolute z-40 w-4/5 bottom-0 top-0 hidden left-0 bg-white shadow-[12rem_0rem_rgba(0,0,0,0.7)] lg:shadow-none lg:static lg:z-0 lg:w-[20%] overflow-scroll lg:h-full border-r">
+            <div id="side-bar" class=" absolute z-40 w-4/5 bottom-0 top-0 hidden left-0 bg-white shadow-[12rem_0rem_rgba(0,0,0,0.7)] lg:shadow-none lg:static lg:z-0 lg:w-[20%] overflow-scroll lg:h-full border-b lg:border-r lg:border-b-0">
                 <div class="tera border-b ">
-                    <div class="text-2xl text-end text-[#263685] lg:hidden mr-2 cursor-pointer "><i class="fa-solid fa-close " onclick="SideToogle()"></i></div>
+                    <div class="text-2xl text-end text-[#263685] lg:hidden mr-2 cursor-pointer "><i id="close-icons" class="fa-solid fa-close " onclick=""></i></div>
                     <div class="mx-auto flex justify-center mb-6 md:my-6" ><a href="index.html"><img src="logo-tera.png" class=" w-40  h-10  "></a></div>
                     <p class=" cursor-pointer border py-1 bg-[#263685] mb-4 pl-4 mr-4 rounded-r-[3em] "> <a href="index.html"><i
                             class=" py-2 text-xl mr-2 fa-solid fa-house-chimney text-white"></i> 
@@ -33,7 +33,7 @@
                 <div class="portfolio ml-4 mt-1 border-b ">
                     <h2 class="font-bold">Portfolios Components</h2>
                     <ul>
-                        <li class="text-[.8rem] my-4 hover:text-[#263685]"><a href="#Info" >Informations personnelles</a> </li>
+                        <li class="text-[.8rem] my-4 hover:text-[#263685]"><a href="informationspersonnelles.html" >Informations personnelles</a> </li>
                         <li class="text-[.8rem] mb-4 hover:text-[#263685]"><a href="Mescompetences.html" >Mes compétences</a> </li>
                         <li class="text-[.8rem] mb-4 hover:text-[#263685]"><a href="Experiences.html" >Experiences</a> </li>
                         <li class="text-[.8rem] mb-4 hover:text-[#263685]"><a href="Formations.html" >Formations</a> </li>
@@ -64,7 +64,7 @@
                  <div class="nav-bar bg-white md:w-full h-[5.5rem] border-b">
                     <div class="nav-bar-content flex justify-between items-center w-full h-full  ">
                         <div class="content-left flex items-center h-full">
-                            <span class="flex mx-2 md:mx-6 text-[#263685] text-2xl md:text-3xl"><i id="icon-bars" class="fa-solid fa-bars cursor-pointer" onclick="SideToogle()" ></i></span>
+                            <span class="flex mx-2 md:mx-6 text-[#263685] text-2xl md:text-3xl"><i id="icon-bars" class="fa-solid fa-bars cursor-pointer" onclick="" ></i></span>
                             <div id="Tera" class=" mr-3 md:mr-6 flex justify-center items-center" ><a href="index.html"><img src="logo-tera.png" class=" w-32 mb-1 h-8 md:w-40 md:h-10  "></a></div>
                            <span class="flex text-[#263685] relative items-center 
                                 justify-center text-xl md:text-2xl"><i class=" cursor-pointer fa-regular fa-bell"></i>
@@ -83,7 +83,7 @@
                             <button
                                 class=" hidden md:block border rounded-[3em] ml-4 py-2 px-6 text-white font-bold bg-[#28AD81] ">Logout
                             </button>
-                            <span class=" mb-2 text-xl ml-2 font-bold cursor-pointer md:hidden" onclick="ShowAfterNav()">...</span>
+                            <span class=" mb-2 text-xl ml-2 font-bold cursor-pointer md:hidden" onclick="">...</span>
                         </div>
                     </div>
                 </div>
